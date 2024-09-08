@@ -1,0 +1,4 @@
+rootProject.name = 'MultiChat'
+include 'rest-module'
+include 'ws-module'
+
