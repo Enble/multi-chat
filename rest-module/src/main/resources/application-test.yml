@@ -1,15 +1,15 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/chat
-    username: root
-    password: local
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:chat
+    username: sa
+    password:
 
   sql:
     init:
       mode: always
-      schema-locations: classpath*:sql/local/schema.sql
-      data-locations: classpath*:sql/local/data.sql
+      schema-locations: classpath*:sql/test/schema.sql
+      data-locations: classpath*:sql/test/data.sql
 
   jpa:
     open-in-view: false
@@ -25,10 +25,10 @@ spring:
     ansi:
       enabled: always
 
-jwt:
-  secret: localTokenSecret
-  atk-ttl: 300
-  rtk-ttl: 600
+token:
+  secret: testTokenSecret
+  atkTTL: 0
+  rtkTTL: 0
 
 logging:
   level:
